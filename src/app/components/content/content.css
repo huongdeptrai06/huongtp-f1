@@ -1,0 +1,84 @@
+.banner{
+  padding:60px 0;
+}
+
+.banner-container{
+  width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:80px;
+}
+
+.banner-img img{
+  width:450px;
+  border-radius:6px;
+}
+
+.banner-text h1{
+  font-size:42px;
+  margin:15px 0;
+}
+
+.banner-text p{
+  color:#777;
+  margin-bottom:20px;
+}
+
+.banner-text button{
+  padding:10px 25px;
+  background:#4bb;
+  border:none;
+  color:white;
+  cursor:pointer;
+}
+
+/* favorites */
+
+.favorites{
+  width:1200px;
+  margin:auto;
+  text-align:center;
+  padding:60px 0;
+}
+
+.sub-title{
+  color:#4bb;
+  font-size:12px;
+  letter-spacing:2px;
+}
+
+.card-list{
+  display:flex;
+  gap:30px;
+  margin-top:40px;
+}
+
+.card{
+  width:33%;
+}
+
+.card img{
+  width:100%;
+  border-radius:6px;
+}
+
+.card span{
+  color:#4bb;
+  font-size:12px;
+}
+
+.card h3{
+  margin-top:10px;
+}
+
+.btn-view{
+  margin-top:30px;
+}
+
+.btn-view button{
+  padding:10px 30px;
+  border:1px solid #4bb;
+  background:white;
+  cursor:pointer;
+}
