@@ -73,3 +73,9 @@
     (sendAuthor)="handleReceiveAuthor($event.author, $event.id)">
   </app-picture-item>
 }
+
+<!-- <button (click)="TangSo()">Tăng số</button> -->
+ <button (click)="SetNumber(1)">Bài viết 1</button>
+ <button (click)="SetNumber(2)">Bài viết 2</button>
+ <button (click)="SetNumber(3)">Bài viết 3</button>
+<app-numberitem [number]="number"/>

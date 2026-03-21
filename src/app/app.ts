@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal,ChangeDetectorRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
 import { FormsModule } from '@angular/forms';
@@ -8,15 +8,17 @@ import { IPost } from './interface/post';
 import { PictureItem } from './components/picture-item/picture-item';
 import { IPicture } from './interface/picture';
 import { CommonModule } from '@angular/common';
+import { Numberitem } from "./components/numberitem/numberitem";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,Header,FormsModule,Todoitem,PictureItem,CommonModule],
+  imports: [RouterOutlet,Header,FormsModule,Todoitem,PictureItem,CommonModule,Numberitem],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
+  constructor(private changedt: ChangeDetectorRef) {}
   // protected readonly title = signal('wd20307');
   title:string = 'Xin chào WD20307 - Ahihih'
   classname:string = "text-red"
@@ -29,6 +31,7 @@ export class App {
   name:string = ''
   priority:string = ''
   message:string = ''
+  number:number = 1
   pictures: IPicture[] = [];
   selectedAuthor: string = '';
   selectedId: number = 0;
@@ -76,12 +79,20 @@ export class App {
   //     const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
   //     this.posts = await res.json()
   // }
-  async ngOnInit(){
-    const res = await fetch('https://picsum.photos/v2/list');
-    this.pictures = await res.json();
-  }
+  // async ngOnInit(){
+  //   const res = await fetch('https://picsum.photos/v2/list');
+  //   this.pictures = await res.json();
+  // }
   handleReceiveAuthor(author: string, id: number){
     this.selectedAuthor = author;
     this.selectedId = id;
+  }
+   async ngOnInit(){
+      const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
+      this.posts = await res.json()
+      this.changedt.markForCheck()
+  }
+  SetNumber =(value:number)=>{
+    this.number=value
   }
 }
